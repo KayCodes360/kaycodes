@@ -9,7 +9,6 @@ int main(){
     printf("Input 10 elements in the array:\n");
 
     for(int i = 0; i < 10; i++){
-        printf("Element %d: ", i);
         scanf("%d", &elements[i]);
     }
 
