@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KayyCodes360</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0a0a0a, #111827, #1f2937);
+      color: white;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    header {
+      text-align: center;
+      padding: 100px 20px 60px;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      color: #cbd5e1;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    .github-btn {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 15px 35px;
+      background: white;
+      color: black;
+      text-decoration: none;
+      border-radius: 14px;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .github-btn:hover {
+      transform: scale(1.05);
+      background: #e5e7eb;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding-bottom: 80px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 25px;
+      padding: 30px;
+      transition: 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .card h2 {
+      margin-bottom: 15px;
+      font-size: 2rem;
+    }
+
+    .card p {
+      color: #d1d5db;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .repo-btn {
+      display: inline-block;
+      text-decoration: none;
+      background: white;
+      color: black;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .repo-btn:hover {
+      background: #d1d5db;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: #9ca3af;
+    }
+
+    @media(max-width: 768px) {
+      header h1 {
+        font-size: 2.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>KayyCodes360</h1>
+
+      <p>
+        Explore my coding projects, experiments, and future creations on GitHub.
+        More projects coming soon as I continue learning and building.
+      </p>
+
+      <a href="https://github.com/KayyCodes360" target="_blank" class="github-btn">
+        Visit My GitHub
+      </a>
+    </header>
+
+    <section class="projects">
+
+      <div class="card">
+        <h2>KayyCodes</h2>
+
+        <p>
+          A collection of my programming projects and experiments in C and other languages.
+        </p>
+
+        <a href="https://github.com/KayyCodes360/kayycodes" target="_blank" class="repo-btn">
+          Open Repository
+        </a>
+      </div>
+
+    </section>
+
+  </div>
+
+  <footer>
+    Built by KayyCodes360 • Powered by GitHub
+  </footer>
+
+</body>
+</html>
