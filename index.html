@@ -60,6 +60,14 @@
       background: #e5e7eb;
     }
 
+    /* Click counter badge */
+    .click-count {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -133,9 +141,11 @@
         More projects coming soon as I continue learning and building.
       </p>
 
-      <a href="https://github.com/KayCodes360" target="_blank" class="github-btn">
+      <a href="https://github.com/KayCodes360" target="_blank" class="github-btn" id="github-btn">
         Visit My GitHub
       </a>
+      <br>
+      <span class="click-count" id="github-count"></span>
     </header>
 
     <section class="projects">
@@ -147,9 +157,11 @@
           A collection of my programming projects and experiments in C and other languages.
         </p>
 
-        <a href="https://github.com/KayCodes360/kaycodes" target="_blank" class="repo-btn">
+        <a href="https://github.com/KayCodes360/kaycodes" target="_blank" class="repo-btn" id="repo-btn">
           Open Repository
         </a>
+        <br><br>
+        <span class="click-count" id="repo-count"></span>
       </div>
 
     </section>
@@ -159,6 +171,42 @@
   <footer>
     Built by KayyCodes360 • Powered by GitHub
   </footer>
+
+  <script>
+    // Helper: get count from localStorage
+    function getCount(key) {
+      return parseInt(localStorage.getItem(key) || '0');
+    }
+
+    // Helper: increment and save count
+    function incrementCount(key) {
+      const newCount = getCount(key) + 1;
+      localStorage.setItem(key, newCount);
+      return newCount;
+    }
+
+    // Helper: update the display label
+    function updateLabel(spanId, count) {
+      const span = document.getElementById(spanId);
+      span.textContent = `Clicked ${count} time${count !== 1 ? 's' : ''}`;
+    }
+
+    // Load saved counts on page load
+    updateLabel('github-count', getCount('github-btn-clicks'));
+    updateLabel('repo-count',   getCount('repo-btn-clicks'));
+
+    // Track GitHub button clicks
+    document.getElementById('github-btn').addEventListener('click', () => {
+      const count = incrementCount('github-btn-clicks');
+      updateLabel('github-count', count);
+    });
+
+    // Track Repository button clicks
+    document.getElementById('repo-btn').addEventListener('click', () => {
+      const count = incrementCount('repo-btn-clicks');
+      updateLabel('repo-count', count);
+    });
+  </script>
 
 </body>
 </html>
